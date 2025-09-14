@@ -139,7 +139,7 @@ describe('password generation', () => {
 ## ❓ Questions?
 
 - **Documentation issues**: Open an issue with the `documentation` label
-- **Security concerns**: Email security@visualogin.app (do not open public issues)
+- **Security concerns**: Email visualogin@proton.me(do not open public issues)
 - **General questions**: Use GitHub Discussions or issue comments
 
 ## 📜 License
