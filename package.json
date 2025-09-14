@@ -4,7 +4,11 @@
   "description": "A Secure, Deterministic, & Zero-Knowledge Visual Password Generator",
   "main": "src/visualogin-core.js",
   "type": "module",
+  "bin": {
+    "visualogin-recovery": "./recovery-cli.js"
+  },
   "scripts": {
+    "recovery": "node rescue-cli.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -17,7 +21,8 @@
     "authentication",
     "visual",
     "pattern",
-    "deterministic"
+    "deterministic",
+    "recovery"
   ],
   "author": "VisuaLogin <visualogin@proton.me>",
   "license": "AGPL-3.0-or-later",
