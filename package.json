@@ -1,0 +1,38 @@
+{
+  "name": "@visualogin/core",
+  "version": "1.0.0",
+  "description": "A Secure, Deterministic, & Zero-Knowledge Visual Password Generator",
+  "main": "src/visualogin-core.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "password",
+    "password-generator",
+    "security",
+    "cryptography",
+    "argon2",
+    "zero-knowledge",
+    "authentication",
+    "visual",
+    "pattern",
+    "deterministic"
+  ],
+  "author": "VisuaLogin <visualogin@proton.me>",
+  "license": "AGPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VisuaLogin/core.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VisuaLogin/core/issues"
+  },
+  "homepage": "https://github.com/VisuaLogin/core#readme",
+  "dependencies": {
+    "argon2-wasm": "^0.9.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
