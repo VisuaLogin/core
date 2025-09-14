@@ -4,7 +4,7 @@
 
 VisuaLogin redefines digital security by replacing the need to memorize complex, abstract passwords with the natural human ability to remember visual patterns and spatial locations. This core engine empowers users to generate strong, unique passwords for every account using a combination of a domain name, username, a color, a pattern, and an optional geographic coordinate.
 
-![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg) [![npm version](https://img.shields.io/npm/v/@visualogin/core-engine)](https://www.npmjs.com/package/@visualogin/core-engine)
+![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg) [![npm version](https://img.shields.io/npm/v/@visualogin/core)](https://www.npmjs.com/package/@visualogin/core)
 
 ## 🔍 The Problem: Password Fatigue is a Human Problem
 
@@ -35,17 +35,17 @@ VisuaLogin uses a cryptographic one-way function to generate a password. Your vi
 
 ## 🚀 Installation & Usage
 
-The VisuaLogin core generator is available as a standalone npm package for integration into web apps, browser extensions, and other Node.js projects. ***not available yet --> Coming soon!!***
+The VisuaLogin core generator is available as a standalone npm package for integration into web apps, browser extensions, and other Node.js projects.
 
 ```bash
-npm install @visualogin/core-engine
+npm install @visualogin/core
 ```
 
 ### Basic Example
 
 ```javascript
 // 1. Import the module
-import PasswordGenerator from '@visualogin/core-engine';
+import PasswordGenerator from '@visualogin/core';
 
 // 2. Define your visual secret input
 const userVisualInput = {
@@ -72,7 +72,7 @@ try {
 ### Advanced Example with Progress Tracking
 
 ```javascript
-import PasswordGenerator from '@visualogin/core-engine';
+import PasswordGenerator from '@visualogin/core';
 
 // Initialize and check environment support first
 await PasswordGenerator.initialize();
