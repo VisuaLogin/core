@@ -192,6 +192,127 @@ if (errors.length > 0) {
   displayErrorsToUser(errors);
 }
 ```
+Of course! Here's the new section to add to your README.md that introduces and explains the recovery CLI tool.
+
+---
+
+## 🆘 Emergency Recovery CLI Tool
+
+Included with the core engine is `recovery-cli.js`, a command-line interface designed for emergency password recovery when graphical interfaces are unavailable. This tool provides the same cryptographic security as the main library but operates entirely in the terminal.
+
+### Features
+
+*   **Standalone Operation:** No web browser required - runs in any Node.js environment
+*   **Secure Input:** Masked input for sensitive information and comprehensive validation
+*   **Same Cryptography:** Uses identical Argon2id + HKDF processes as the main library
+*   **Emergency Focus:** Designed for recovery scenarios with clear security warnings
+
+### Installation for CLI Use
+
+To use the recovery tool, you have several options:
+
+#### Option 1: Run directly with npx (Recommended for emergencies)
+```bash
+npx @visualogin/core recovery
+```
+
+#### Option 2: Install globally for system-wide access
+```bash
+npm install -g @visualogin/core
+visualogin-recovery
+```
+
+#### Option 3: Run from local installation
+```bash
+npm install @visualogin/core
+npx visualogin-recovery
+```
+
+#### Option 4: Run directly from source
+```bash
+git clone https://github.com/VisuaLogin/core.git
+cd core
+npm install
+npm run recovery
+```
+
+### Usage Example
+
+```bash
+$ visualogin-recovery
+
+🆘 VISUALOGIN EMERGENCY RECOVERY TOOL
+==========================================
+
+🔐 Please provide your visual login details exactly as you remember them:
+
+1. Enter the website domain (e.g., "github.com"): github.com
+2. Enter your username for this site: alice.dev
+3. Enter your hex color (e.g., "#FF5733"): #FF5733
+4. Enter your pattern numbers, separated by commas (e.g., "10,20,30,40"): 15,23,41,10,39
+
+5. Geographic coordinates (optional - press Enter to skip)
+   Did you use coordinates? (y/N): n
+
+6. Password length (12-64, default 24): 18
+
+🔄 Initializing cryptographic engine...
+
+⚡ Generating your password...
+   This may take a few seconds due to memory-hard encryption
+
+📊 100% - Password generated successfully
+
+✅ PASSWORD RECOVERY SUCCESSFUL
+==========================================
+🔑 YOUR GENERATED PASSWORD:
+==========================================
+7E&k7@W8-xyPq!vS4*L
+==========================================
+```
+
+### Building the Recovery Tool into Your npm Package
+
+The recovery CLI is automatically included when you install `@visualogin/core`. The package.json configuration handles this through:
+
+```json
+{
+  "bin": {
+    "visualogin-recovery": "./recovery-cli.js"
+  },
+  "scripts": {
+    "recovery": "node recovery-cli.js"
+  }
+}
+```
+
+This configuration:
+1. **Registers a global command** (`visualogin-recovery`) when installed globally
+2. **Provides a local script** (`npm run recovery`) when installed locally
+3. **Supports npx execution** (`npx @visualogin/core recovery`) without installation
+
+### Security Considerations for CLI Use
+
+⚠️ **Important Security Notes:**
+- Use this tool only in secure, private environments
+- Be aware of shoulder surfing when entering sensitive information
+- Terminal commands may be stored in shell history - clear history after use
+- The tool includes input masking and memory sanitization features
+- All the same cryptographic protections apply as in the graphical version
+
+### Integration with Your System
+
+For advanced users, the recovery tool can be integrated into system security workflows:
+
+```bash
+# Example: One-time password generation
+VISUALOGIN_DOMAIN="github.com" VISUALOGIN_USER="alice.dev" npx @visualogin/core recovery
+
+# Example: Using in automated recovery scripts (use with caution)
+echo -e "github.com\nalice.dev\n#FF5733\n15,23,41,10,39\nn\n18" | visualogin-recovery
+```
+
+The recovery CLI ensures that even without the graphical interface, users can always regenerate their passwords using the visual secrets they remember.
 
 ---
 
