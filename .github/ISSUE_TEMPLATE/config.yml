@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🛡️ Security Vulnerability
+    url: mailto:security@visualogin.app
+    about: Please report security issues responsibly via email
+  - name: 💬 Community Discussions
+    url: https://github.com/VisuaLogin/core/discussions
+    about: Ask questions and share ideas in discussions
